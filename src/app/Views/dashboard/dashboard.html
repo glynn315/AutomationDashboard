@@ -1,4 +1,4 @@
-<div class="page flex-col items-center gap-3">
+<div class="page flex-col items-center gap-3 bg-primary">
     <div class="w-full bg-accent p-3">
         <header class="text-white font-nunito font-semibold">Automation Dashboard</header>
     </div>
@@ -30,161 +30,29 @@
                 </form>
             </div>
             <div class="h-[400px] flex-col gap-3 overflow-auto !pr-3 pb-3">
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
+                @for (logs of LogsList; track $index) {
+                    <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
+                        <div class="flex-col font-nunito leading-none">
+                            <span class="font-bold">PSID</span>
+                            <span>{{logs.customer_psid}}</span>
                         </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
+                        <div class="font-nunito leading-none flex-row gap-9">
+                            <div class="flex-col gap-1">
+                                <span class="font-bold">Date Time Transfer</span>
+                                <span>{{logs.date_created | date}}</span>
+                            </div>
+                            <div class="flex-col gap-1">
+                                <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md text-sm">
+                                    <option value={{logs.status}}>{{logs.status}}</option>
+                                    <option value="OPEN">OPEN</option>
+                                    <option value="PURCHASE">PURCHASE</option>
+                                    <option value="COMPLAINT">COMPLAINT</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card !border-t-0 border-x-2 flex-row justify-between !p-3 items-center">
-                    <div class="flex-col font-nunito leading-none">
-                        <span class="font-bold">PSID</span>
-                        <span>12334235423534</span>
-                    </div>
-                    <div class="font-nunito leading-none flex-row gap-9">
-                        <div class="flex-col gap-1">
-                            <span class="font-bold">Date Time Transfer</span>
-                            <span>Jan-12-2025</span>
-                        </div>
-                        <div class="flex-col gap-1">
-                            <select name="" id="" class="w-[200px] bg-primary p-2 outline-none rounded-md">
-                                <option value="OPEN">OPEN</option>
-                                <option value="PURCHASE">PURCHASE</option>
-                                <option value="COMPLAINT">COMPLAINT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
+                }
             </div>
         </div>
     </div>
-    
 </div>

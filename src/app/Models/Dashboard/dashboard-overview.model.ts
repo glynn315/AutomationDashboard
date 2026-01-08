@@ -1,2 +1,3 @@
-export class DashboardOverview {
+export interface DashboardOverview {
+    
 }
