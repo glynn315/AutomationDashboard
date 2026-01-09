@@ -41,7 +41,7 @@ export class Dashboard implements OnInit {
     const payload = {
       conversation_id: log.conversation_id,
       status: log.status,
-      transfer_count_bot: log.transfer_count_bot,
+      transfer_count_bot: log.transfer_count_bot + 1,
       transfer_count_human: log.transfer_count_human,
     };
     this.LogsServices.UpdateLogsList(payload).subscribe(() => {

@@ -42,14 +42,8 @@
                                 <span class="font-bold">Date Time Transfer</span>
                                 <span>{{ logs.date_created | date:'short' }}</span>
                             </div>
-
                             <div class="flex-col gap-1">
-                                <select
-                                    name="status-{{ logs.conversation_id }}"
-                                    [(ngModel)]="logs.status"
-                                    class="w-[200px] bg-primary p-2 outline-none rounded-md text-sm"
-                                    (change)="updateHandoff(logs)"
-                                >
+                                <select name="status-{{ logs.conversation_id }}" [(ngModel)]="logs.status" class="w-[200px] bg-primary p-2 outline-none rounded-md text-sm" (change)="updateHandoff(logs)">
                                     <option value="OPEN">OPEN</option>
                                     <option value="PURCHASE">PURCHASE</option>
                                     <option value="COMPLAINT">COMPLAINT</option>
