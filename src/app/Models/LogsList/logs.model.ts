@@ -9,4 +9,6 @@ export interface Logs {
     customer_psid ?: number,
     conversation_id ?: number,
     date_created ?: Date,
+    lead_stage ?: string,
+    relationship_stage ?: string,
 }
