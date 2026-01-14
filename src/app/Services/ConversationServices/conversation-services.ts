@@ -14,7 +14,7 @@ export class ConversationServices {
   constructor(private http: HttpClient) {}
 
   displayListLogs(): Observable<Logs[]>{
-    return this.http.get<Logs[]>(this.apiUrl);
+    return this.http.get<Logs[]>(`${this.apiUrl}`);
   }
   displayListLogsPending(): Observable<Logs[]>{
     return this.http.get<Logs[]>(`${this.apiUrl}/logs`);

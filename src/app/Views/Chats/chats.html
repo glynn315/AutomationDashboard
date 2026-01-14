@@ -1,0 +1,98 @@
+<div class="h-full flex-col items-center gap-3 overflow-auto">
+    <div class="w-5/6 p-3">
+        <header class="font-semibold font-nunito !text-3xl">Leads Monitoring</header>
+        <div class="w-full flex flex-row flex-nowrap gap-3 pb-4 mb-4 border-b-3 overflow-x-auto">
+            <div class="card !w-500">
+                <span class="font-nunito font-bold text-xl">Intake</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Qualified</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Scheduled Visit</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Closing</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Dormant</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Lost</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Unqualified</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Active (Paying)</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Delinquent</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Forfeited</span>
+                <div class="count">0</div>
+            </div>
+            <div class="card">
+                <span class="font-nunito font-bold text-xl">Former Customer</span>
+                <div class="count">0</div>
+            </div>
+        </div>
+        <Header class="font-semibold !text-3xl font-nunito">Chat List</Header>
+        <!-- Table -->
+        <div class="h-[400px] overflow-auto rounded-md">
+            <table class="w-full border-collapse font-nunito text-sm">
+                <thead class="bg-gray-100 sticky top-0">
+                    <tr>
+                        <th class="text-left p-2 border-b w-[200px]">PSID</th>
+                        <th class="text-left p-2 border-b">Last Message</th>
+                        <th class="text-left p-2 border-b w-[200px] !text-center">Date / Time</th>
+                        <th class="text-left p-2 border-b w-[200px] !text-center">Status</th>
+                        <th class="text-left p-2 border-b w-[200px] !text-center">Leads</th>
+                        <th class="text-left p-2 border-b w-[200px] !text-center">Relationship</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (logs of filteredLogs(); track logs.conversation_id) {
+                        <tr class="hover:bg-gray-400 duration-500">
+                            <td class="p-2">
+                                {{ logs.customer_psid }}
+                            </td>
+                            <td class="p-2">
+                                {{ logs.last_message}}
+                            </td>
+                            <td class="p-2 !text-center">
+                                {{ logs.date_created | date:'short' }}
+                            </td>
+                            <td class="p-2 !text-center">
+                                {{ logs.status }}
+                            </td>
+                            <td class="p-2 !text-center">
+                                {{ logs.lead_stage }}
+                            </td>
+                            <td class="p-2 !text-center">
+                                {{ logs.relationship_stage }}
+                            </td>
+                        </tr>
+                    }
+                    @if (filteredLogs().length === 0) {
+                        <tr>
+                            <td colspan="3" class="p-4 text-center text-gray-500">
+                                No results found
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
