@@ -4,33 +4,33 @@
         <div class="w-full flex flex-row flex-nowrap gap-3 pb-4 mb-4 border-b-3 overflow-x-auto">
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Intake</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Intake}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Qualified</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Qualified}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Scheduled Visit</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Schedule}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Closing</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Closing}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Dormant</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Dormant}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Lost</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Lost}}</div>
             </div>
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Unqualified</span>
-                <div class="count">0</div>
+                <div class="count">{{leadsSummaryDisplay?.Unqualified}}</div>
             </div>
-            <div class="card">
+            <!-- <div class="card">
                 <span class="font-nunito font-bold text-xl">Active (Paying)</span>
                 <div class="count">0</div>
             </div>
@@ -45,7 +45,7 @@
             <div class="card">
                 <span class="font-nunito font-bold text-xl">Former Customer</span>
                 <div class="count">0</div>
-            </div>
+            </div> -->
         </div>
         <Header class="font-semibold !text-3xl font-nunito">Chat List</Header>
         <!-- Table -->

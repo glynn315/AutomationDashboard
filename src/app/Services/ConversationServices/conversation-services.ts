@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { UpdateLogsList } from '../../Models/LogsList/update-logs-list.model';
 import { Updateleads } from '../../Models/LogsList/updateleads.model';
 import { UpdateleadsRelationship } from '../../Models/LogsList/updateleads-relationship.model';
+import { Leadssummary } from '../../Models/LogsList/leadssummary.model';
 
 @Injectable({
   providedIn: 'root',
@@ -31,5 +32,9 @@ export class ConversationServices {
   }
   UpdateRelationshipStatus(data: UpdateleadsRelationship):Observable<UpdateleadsRelationship>{
     return this.http.put<UpdateleadsRelationship>(`${this.apiUrl}/updateLeadsRelationship` , data)
+  }
+  DashboardLeadsSummary(): Observable<Leadssummary> 
+  {
+    return this.http.get<Leadssummary>(`${this.apiUrl}/summary`);
   }
 }

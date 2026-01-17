@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Updateleads } from '../../Models/LogsList/updateleads.model';
 import { UpdateleadsRelationship } from '../../Models/LogsList/updateleads-relationship.model';
+import { Leadssummary } from '../../Models/LogsList/leadssummary.model';
 
 @Component({
   selector: 'app-chats',
@@ -17,6 +18,7 @@ import { UpdateleadsRelationship } from '../../Models/LogsList/updateleads-relat
 export class Chats implements OnInit {
   
   LogsList: Logs[] = [];
+  leadsSummaryDisplay: Leadssummary | null = null;
   searchTerm: string = '';
   leadsStatusField: Updateleads = {
     customer_psid: "",
@@ -30,6 +32,7 @@ export class Chats implements OnInit {
 
   ngOnInit(): void {
     this.displayChats();
+    this.LeadsSummary();
   }
 
   filteredLogs() {
@@ -48,6 +51,11 @@ export class Chats implements OnInit {
   displayChats(){
     this.LogsServices.displayListLogs().subscribe((data) => {
       this.LogsList = data;
+    })
+  }
+  LeadsSummary(){
+    this.LogsServices.DashboardLeadsSummary().subscribe((data) => {
+      this.leadsSummaryDisplay = data;
     })
   }
   updateLeadsStatus(logs:any){
