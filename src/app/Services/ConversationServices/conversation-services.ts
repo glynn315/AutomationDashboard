@@ -27,9 +27,10 @@ export class ConversationServices {
     return this.http.put<UpdateLogsList>(`${this.apiUrl}/update` , data)
   }
 
-  UpdateLeadsStatus(data: Updateleads):Observable<Updateleads>{
-    return this.http.put<Updateleads>(`${this.apiUrl}/updateLeadStatus` , data)
+  UpdateLeadsStatus(data: Updateleads): Observable<Updateleads> {
+    return this.http.put<Updateleads>(`${this.apiUrl}/updateLeadsStatus`, data);
   }
+
   UpdateRelationshipStatus(data: UpdateleadsRelationship):Observable<UpdateleadsRelationship>{
     return this.http.put<UpdateleadsRelationship>(`${this.apiUrl}/updateLeadsRelationship` , data)
   }
